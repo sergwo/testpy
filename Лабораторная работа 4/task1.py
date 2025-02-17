@@ -1,179 +1,180 @@
-if __name__ == "__main__":
-    # Write your solution here
-    pass
-class Auto:
-    """
-    Базовый класс, представляющий автомобиль.
-    """
-    def __init__(self, model: str, weight: float, color: str) -> None:
-        """
-        Конструктор класса Auto.
-        Args:
-            model: Модель автомобиля - строковый тип.
-            weight: Вес автомобиля в килограммах - float.
-            color: Цвет автомобиля - строковый тип.
-        """
-        self._model = model #модель изменит нельзя
-        self._weight = weight  # Используем _weight для внутреннего хранения
-        self.color = color
+если __name__ == "__main__":
+    класс Авто:
+        ""
+ Базовая класес, предвестник совмобил.
+ ""
+        деф __init__(сам, модель: ул, вэс: float, цвет: ул) -> Нет:
+                   ""
+ Конструктор Класа Авто.
+ Аргс:
+ модель: Модель автомобиля - строковый тип.
+ вэс: Вес ац атомобиля в килограммах - float.
+ цвет: Цвет автомобиля - троковский тип.
+       ""
+ sebya._модель = модельj #модель изменитт нельзя
+ sebya._вес = ве #Ispollzum _vews dlya innetrеnnego chranеniya
+ сebya.цвет = цвет
 
-    def __str__(self) -> str:
-        """
-        Возвращает строковое представление об обьекте для пользователя приложением.
-        """
-        return f"{self.__class__.__name__}: {self.model}, {self.color}, {self.weight} кг"
+        деф __str__(себя) -> str:
+       ""
+ Объединенная странная вещь, которую преподносят в свое время.
+       ""
+ возврат ф"{ sebya.__klасс___.___imya__}: { сebya.modely}, { сebya.cvet}, { сebya.véс} kg"
 
-    def __repr__(self) -> str:
-        """
-        Возвращает строковое представление об объекте для разработчиков приложения.
-        """
-        return f"{self.__class__.__name__}(model='{self.model}', weight={self.weight}, color='{self.color}')"
+        деф __repr__(себя) -> str:
+ ""
+ Возобновление делало так, что предлежание могло привести к тому, что разработчики приложатся.
+ ""
+            возврат ф"{ себя.__класс__.__имя__}(модель='{ себя.модель}', вес={ себя.вес}, цвет='{ себя.цвет}')"
 
-    @property
-    def weight(self) -> float:
-        """
-        Getter для веса.
-        возвращает:  Вес автомобиля.
-        """
-        return self._weight
+        @собственность
+        деф вес(себя) -> поплавок:
+             ""
+ Геттер для веца.
+ возврат: Вест автомобилия.
+ ""
+            возврат себя._вес
 
-    @weight.setter
-    def weight(self, new_weight: float) -> None:
-        """
-        Setter для веса. Может быть переопределен в подклассах для валидации.
-        """
-        self._weight = new_weight
+        @вес.сеттер
+        деф вес(себя, new_weight: float) -> Нет:
+             ""
+ Сеттер для веца. Может перепредье в одкласахе для валидаций.
+ ""
+ себя._вес = новый_вес
 
-    def change_color(self, new_color: str) -> None:
-        """
-        Изменяет цвет автомобиля.
-        Args:
-            new_color: Новый цвет автомобиля.
-        """
-        self.color = new_color
-        print(f"Цвет автомобиля изменен на {new_color}")
+        деф изменить_color(себя, new_color: str) -> Нет:
+             ""
+ Изменеть attomobilya.
+ Аргс:
+ new_color: Новый цвет.
+ ""
+ себя.цвет = new_color
+            печать(ф "Цвет" автомобилиа изменен на {новый_color}")
 
-    @property
-    def model(self) -> str:
-        """
-        Getter для. модели автомобиля.
-        """
-        return self._model
+        @собственность
+        деф модель(себя) -> str:
+             ""
+ Геттер для. модели автомобилия.
+ ""
+            возврат себя._модель
 
 
-class Car(Auto):
-    """
-    Класс легковой автомобиль, наследник класса Auto.
-    """
+    класс Автомобиль(Авто):
+         ""
+ Клас легковой автомобилль, Наследник Класа Авто.
+ ""
 
-    MAX_WEIGHT: float = 3500.0  # Максимальный вес легкового автомобиля
+ MAX_WEIGHT: float = 3500,0  #Максимальный в "Легкого" в томобилии
 
-    def __init__(self, model: str, weight: float, color: str) -> None:
+        деф __init__(себя, model: str, weight: float, color: str) -> Нет:
+             ""
+ Конструктор Класа Автомобиль.
+ Аргс:
+ модель: Модель автомобиля.
+ вес: Вес автомобилия в килограммах.
+ цвет: Цвет автомобиля.
+ ""
+            супер().__init__(модель, вес, цвет)
+ себя.вес = вес 
+
+        @Auto.weight.setter #Используем декоратор базового класа
+        деф вес(себя, new_weight: float) -> Нет:
+             ""
+ Сеттер для веца с валидацией.
+
+ Аргс:
+ new_weight: Новая жизнь.
+
+ Поднимает:
+ ValueError: Если в своем опыте применил свой предель.
+ ""
+            если новый_вес > Автомобиль.МАКС_ВЕС:
+                поднимать Ошибка ценности(ф "Вес легкого" автомобилиа не может предварять {Автомобиль.МАКС_ВЕС} кг")
+ себя._вес = новый_вес
+
+        деф __str__(себя) -> str:
+             ""
+ Возвращение к троковому предвещанию доблекта пошлователя (перегрузочная).
+ ""
+            возврат ф "Легковой автомобилль": { себя.модель}, { себя.цвет}, { себя.вес} кг"
+
+        деф __repr__(себя) -> str:
+            """
+            Возвращает строковое представление объекта для разработчика (перегрузка).
+            """
+            return f"Car(model='{self.model}', weight={self.weight}, color='{self.color}')"
+
+
+    class Truck(Auto):
         """
-        Конструктор класса Car.
-        Args:
-            model: Модель автомобиля.
-            weight: Вес автомобиля в килограммах.
-            color: Цвет автомобиля.
+        Класс грузовой автомобиль. Наследуется от класса Auto.
         """
-        super().__init__(model, weight, color)
-        self.weight = weight
 
-    @Auto.weight.setter  # Используем декоратор от базового класса
-    def weight(self, new_weight: float) -> None:
-        """
-        Setter для веса с валидацией.
+        MIN_WEIGHT: float = 3500.0  # Минимальный вес грузового автомобиля
 
-        Args:
-            new_weight: Новый вес автомобиля.
+        def __init__(self, model: str, weight: float, color: str) -> None:
+            """
+            Конструктор класса Truck.
 
-        Raises:
-            ValueError: Если вес превышает допустимый предел.
-        """
-        if new_weight > Car.MAX_WEIGHT:
-            raise ValueError(f"Вес легкового автомобиля не может превышать {Car.MAX_WEIGHT} кг")
-        self._weight = new_weight
+            Args:
+                model: Модель автомобиля.
+                weight: Вес автомобиля в килограммах.
+                color: Цвет автомобиля.
+            """
+            super().__init__(model, weight, color)
+            self.weight = weight
 
-    def __str__(self) -> str:
-        """
-        Возвращает строковое представление объекта для пользователя (перегрузка).
-        """
-        return f"Легковой автомобиль: {self.model}, {self.color}, {self.weight} кг"
+        @Auto.weight.setter  # Используем декоратор от базового класса
+        def weight(self, new_weight: float) -> None:
+            """
+            Setter для веса с валидацией.
 
-    def __repr__(self) -> str:
-        """
-        Возвращает строковое представление объекта для разработчика (перегрузка).
-        """
-        return f"Car(model='{self.model}', weight={self.weight}, color='{self.color}')"
+            Args:
+                new_weight: Новый вес автомобиля.
 
+            Raises:
+                ValueError: Если вес меньше допустимого предела.
+            """
+            if new_weight < Truck.MIN_WEIGHT:
+                raise ValueError(f"Вес грузового автомобиля должен быть не менее {Truck.MIN_WEIGHT} кг")
+            self._weight = new_weight
 
-class Truck(Auto):
-    """
-    Класс грузовой автомобиль. Наследуется от класса Auto.
-    """
+        def __str__(self) -> str:
+            """
+            Возвращает строковое представление объекта для пользователя (перегрузка).
+            """
+            return f"Грузовой автомобиль: {self.model}, {self.color}, {self.weight} кг"
 
-    MIN_WEIGHT: float = 3500.0  # Минимальный вес грузового автомобиля
-
-    def __init__(self, model: str, weight: float, color: str) -> None:
-        """
-        Конструктор класса Truck.
-
-        Args:
-            model: Модель автомобиля.
-            weight: Вес автомобиля в килограммах.
-            color: Цвет автомобиля.
-        """
-        super().__init__(model, weight, color)
-        self.weight = weight
-
-    @Auto.weight.setter  # Используем декоратор от базового класса
-    def weight(self, new_weight: float) -> None:
-        """
-        Setter для веса с валидацией.
-
-        Args:
-            new_weight: Новый вес автомобиля.
-
-        Raises:
-            ValueError: Если вес меньше допустимого предела.
-        """
-        if new_weight < Truck.MIN_WEIGHT:
-            raise ValueError(f"Вес грузового автомобиля должен быть не менее {Truck.MIN_WEIGHT} кг")
-        self._weight = new_weight
-
-    def __str__(self) -> str:
-        """
-        Возвращает строковое представление объекта для пользователя (перегрузка).
-        """
-        return f"Грузовой автомобиль: {self.model}, {self.color}, {self.weight} кг"
-
-    def __repr__(self) -> str:
-        """
-        Возвращает строковое представление объекта для разработчика (перегрузка).
-        """
-        return f"Truck(model='{self.model}', weight={self.weight}, color='{self.color}')"
+        def __repr__(self) -> str:
+            """
+            Возвращает строковое представление объекта для разработчика (перегрузка).
+            """
+            return f"Truck(model='{self.model}', weight={self.weight}, color='{self.color}')"
 
 
 # Пример использования
-car = Car("Renault Capture", 1800.0, "Green")
-print(car)
-print(repr(car))
+    car = Car("Renault Capture", 1800.0, "Green")
+    print(car)
+    print(repr(car))
 
-truck = Truck("MAN TGS ", 7000.0, "White")
-print(truck)
-print(repr(truck))
+    truck = Truck("MAN TGS ", 7000.0, "White")
+    print(truck)
+    print(repr(truck))
 
-car.change_color("Blue")
-print(car)
+    car.change_color("Blue")
+    print(car)
 
-car.weight = 2000.0
-print(car)
+    car.weight = 2000.0
+    print(car)
 
 
 #car1 = Car("Жигули", 4000.0, "Black")  #  вызовет ValueError
 #print(car_invalid)
 #car1.weight = 4000
-truck1 = Truck("Камаз", 2000.0, "Red")  #  вызовет ValueError
-print(truck2)
+    truck1 = Truck("Камаз", 2000.0, "Red")  #  вызовет ValueError
+    print(truck2)
 
-car.weight = 5000.0 # Вызовет ValueError
+    car.weight = 5000.0 # Вызовет ValueError
+
+
+pass
